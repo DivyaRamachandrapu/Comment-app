@@ -7,20 +7,22 @@ class Comments extends Component {
     return (
       <div className="app-container">
         <div className="comments-app">
+          <h1 className="comment-heading">Comments</h1>
           <div className="comments-add-section">
-            <h1 className="comment-heading">Comments</h1>
-            <p className="comment-note">Say something about 4.0 Technologies</p>
-            <input type="text" placeholder="Your Name" className="name-input" />
-            <input
-              type="text"
-              placeholder="Your Comment"
-              className="comment-input"
-            />
-            <button type="button" className="add-comment-btn">
-              Add Comment
-            </button>
-          </div>
-          <div className="comment-image">
+            <form className="form">
+              <p className="comment-note">
+                Say something about 4.0 Technologies
+              </p>
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="name-input"
+              />
+              <textarea placeholder="Your Comment" className="comment-input" />
+              <button type="button" className="add-comment-btn">
+                Add Comment
+              </button>
+            </form>
             <img
               src="https://assets.ccbp.in/frontend/react-js/comments-app/comments-img.png "
               alt="comments"
@@ -34,3 +36,4 @@ class Comments extends Component {
 }
 
 export default Comments
+
