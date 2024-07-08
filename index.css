@@ -1,16 +1,39 @@
 .app-container {
-  background-color: #ffffff;
   display: flex;
-  flex-direction: column;
   padding: 150px;
-  align-items: flex-start;
   cursor: pointer;
+  justify-content: center;
 }
 .comments-app {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  width: 90%;
+  max-width: 550px;
 }
 
+@media screen and (min-width: 768px) {
+  .comments-app {
+    width: 80%;
+    max-width: 1140px;
+  }
+}
+.comments-add-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .comments-add-section {
+    flex-direction: row;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 .comment-heading {
   font-size: 40px;
   font-family: 'Roboto';
@@ -23,13 +46,9 @@
   font-family: 'Roboto';
   color: #475569;
 }
-.input-containers {
-  display: flex;
-  flex-direction: column;
-}
+
 .name-input {
   height: 50px;
-  width: 40%;
   border: 1px solid #94a3b8;
   border-radius: 5px;
   background-color: transparent;
@@ -40,8 +59,6 @@
 }
 
 .comment-input {
-  height: 200px;
-  width: 40%;
   border: 1px solid #94a3b8;
   border-radius: 5px;
   background-color: transparent;
@@ -63,13 +80,8 @@
   border-radius: 4px;
 }
 
-.comments-image {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .image {
   height: 400px;
-  width: 40%;
+  width: 350px;
   margin: 20px;
 }
