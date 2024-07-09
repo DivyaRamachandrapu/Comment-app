@@ -1,9 +1,10 @@
 import {formatDistanceToNow} from 'date-fns'
+
 import './index.css'
 
 const CommentItem = props => {
   const {commentDetails} = props
-  const {id, name, comment, date, initialClassName, isLiked} = commentDetails
+  const {id, name, comment, isLiked, initialClassName, date} = commentDetails
   const initial = name ? name[0].toUpperCase() : ''
   const likeTextClassName = isLiked ? 'button active' : 'button'
   const likeImageUrl = isLiked
