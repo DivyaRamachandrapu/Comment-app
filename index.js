@@ -1,9 +1,8 @@
 import {Component} from 'react'
-import {v4} from 'uuid'
-
-import CommentItem from '../CommentItem'
-
 import './index.css'
+import {v4} from 'uuid'
+import CommentItem from '../CommentItem'
+// Write your code here
 
 const initialContainerBackgroundClassNames = [
   'amber',
@@ -30,9 +29,9 @@ class Comments extends Component {
     })
   }
 
-  toggleIsLiked = id => {
+  toggledIsLiked = id => {
     this.setState(prevState => ({
-      commentsList: prevState.commentsList.map(eachComment => {
+      commentsList: prevState.contactList.map(eachComment => {
         if (id === eachComment.id) {
           return {...eachComment, isLiked: !eachComment.isLiked}
         }
@@ -69,8 +68,8 @@ class Comments extends Component {
       name: nameInput,
       comment: commentInput,
       date: new Date(),
-      isLiked: false,
       initialClassName: initialBackgroundColorClassName,
+      isLiked: false,
     }
 
     this.setState(prevState => ({
@@ -80,35 +79,30 @@ class Comments extends Component {
     }))
   }
 
-  onChangeCommentInput = event => {
-    this.setState({
-      commentInput: event.target.value,
-    })
+  onChangeNameInput = event => {
+    this.setState({nameInput: event.target.value})
   }
 
-  onChangeNameInput = event => {
-    this.setState({
-      nameInput: event.target.value,
-    })
+  onChangeCommentInput = event => {
+    this.setState({commentInput: event.target.value})
   }
 
   render() {
-    const {nameInput, commentInput, commentsList} = this.state
-
+    const {commentsList, commentInput, nameInput} = this.state
     return (
       <div className="app-container">
-        <div className="comments-container">
+        <div className="comments-app">
           <h1 className="app-heading">Comments</h1>
-          <div className="comments-inputs">
-            <form className="form" onSubmit={this.onAddComment}>
-              <p className="form-description">
+          <div className="comments-add-section">
+            <form className="form">
+              <p className="comment-note">
                 Say something about 4.0 Technologies
               </p>
               <input
                 type="text"
-                className="name-input"
                 placeholder="Your Name"
                 value={nameInput}
+                className="name-input"
                 onChange={this.onChangeNameInput}
               />
               <textarea
@@ -118,14 +112,14 @@ class Comments extends Component {
                 onChange={this.onChangeCommentInput}
                 rows="6"
               />
-              <button type="submit" className="add-button">
+              <button type="submit" className="add-comment-btn">
                 Add Comment
               </button>
             </form>
             <img
-              className="image"
-              src="https://assets.ccbp.in/frontend/react-js/comments-app/comments-img.png"
+              src="https://assets.ccbp.in/frontend/react-js/comments-app/comments-img.png "
               alt="comments"
+              className="image"
             />
           </div>
           <hr className="line" />
@@ -141,3 +135,4 @@ class Comments extends Component {
 }
 
 export default Comments
+
