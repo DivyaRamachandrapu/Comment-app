@@ -29,9 +29,9 @@ class Comments extends Component {
     })
   }
 
-  toggledIsLiked = id => {
+  toggleIsLiked = id => {
     this.setState(prevState => ({
-      commentsList: prevState.contactList.map(eachComment => {
+      commentsList: prevState.commentList.map(eachComment => {
         if (id === eachComment.id) {
           return {...eachComment, isLiked: !eachComment.isLiked}
         }
@@ -135,4 +135,5 @@ class Comments extends Component {
 }
 
 export default Comments
+
 
